@@ -1,0 +1,188 @@
+html, body {
+  width: 100%;
+  height: 100%; }
+
+body {
+  background: #cdcdcd;
+  overflow: hidden; }
+
+.colorizer {
+  width: 80%;
+  margin: 4% auto; }
+
+h1 {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 60pt;
+  line-height: 90pt;
+  font-weight: 400;
+  margin: 0 0 0 -4px; }
+  .fonts-loaded h1 {
+    font-family: "usual",sans-serif; }
+  h1 a {
+    text-decoration: none;
+    color: #fff;
+    -webkit-transition: color 0.4s;
+    -moz-transition: color 0.4s;
+    -ms-transition: color 0.4s;
+    -o-transition: color 0.4s;
+    transition: color 0.4s; }
+
+.findMyColor {
+  width: 340px;
+  padding: 20px 0 0 0; }
+  .findMyColor input {
+    font-family: sans-serif;
+    font-size: 10pt;
+    line-height: 20pt;
+    font-weight: 400; }
+    .fonts-loaded .findMyColor input {
+      font-family: "usual",sans-serif; }
+    .findMyColor input[type="text"] {
+      border: 1px solid #fff;
+      background: none;
+      color: #fff;
+      text-indent: 10px;
+      width: 223px;
+      box-sizing: border-box;
+      -webkit-transition: border-color 0.4s;
+      -moz-transition: border-color 0.4s;
+      -ms-transition: border-color 0.4s;
+      -o-transition: border-color 0.4s;
+      transition: border-color 0.4s; }
+    .findMyColor input[type="submit"] {
+      background: #fff;
+      font-size: 10pt;
+      border: 1px solid #f4f4f4;
+      cursor: pointer;
+      margin-left: 5px;
+      -webkit-transition: border-color 0.3s, background 0.5s;
+      -moz-transition: border-color 0.3s, background 0.5s;
+      -ms-transition: border-color 0.3s, background 0.5s;
+      -o-transition: border-color 0.3s, background 0.5s;
+      transition: border-color 0.3s, background 0.5s; }
+
+.mainNavigation {
+  font-family: sans-serif;
+  font-size: 10pt;
+  line-height: 20pt;
+  font-weight: 400;
+  color: #fff;
+  width: 337px;
+  margin: 25px 0 0px 0;
+  padding: 0 0 15px 0;
+  border-bottom: 1px solid #fff; }
+  .fonts-loaded .mainNavigation {
+    font-family: "usual",sans-serif; }
+  .mainNavigation ul {
+    list-style: none;
+    -moz-column-count: 3;
+    -moz-column-gap: inherit;
+    -webkit-column-count: 3;
+    -webkit-column-gap: inherit;
+    column-count: 3;
+    column-gap: inherit; }
+    .mainNavigation ul li {
+      width: 33%; }
+  .mainNavigation a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 12pt;
+    display: block;
+    -webkit-transition: color 0.4s;
+    -moz-transition: color 0.4s;
+    -ms-transition: color 0.4s;
+    -o-transition: color 0.4s;
+    transition: color 0.4s; }
+
+.container, .tips, .about, .authors {
+  background: #fff;
+  font-family: sans-serif;
+  font-size: 10pt;
+  line-height: 20pt;
+  font-weight: 400;
+  color: #3b3838;
+  width: 307px;
+  padding: 15px;
+  font-weight: 300; }
+  .fonts-loaded .container, .fonts-loaded .tips, .fonts-loaded .about, .fonts-loaded .authors {
+    font-family: "usual",sans-serif; }
+  .container p, .tips p, .about p, .authors p {
+    margin-bottom: 10px; }
+
+.about {
+  display: none; }
+
+.authors {
+  display: none; }
+  .authors ul {
+    list-style: none; }
+    .authors ul li {
+      margin-bottom: 10px; }
+
+p a {
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -ms-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s; }
+
+.randomColor {
+  position: absolute;
+  right: 7%;
+  bottom: 6%; }
+  .randomColor h2 {
+    font-family: sans-serif;
+    font-size: 60pt;
+    line-height: 90pt;
+    font-weight: 400;
+    color: #fff; }
+    .fonts-loaded .randomColor h2 {
+      font-family: "usual",sans-serif; }
+  .randomColor .switchColor {
+    position: absolute;
+    top: 28px;
+    right: -40px; }
+  .randomColor .btnGroup {
+    display: block;
+    width: 30px;
+    height: 30px; }
+    .randomColor .btnGroup .fa {
+      width: 30px;
+      height: 30px;
+      font-size: 20pt;
+      margin: -28px 0 0 3px;
+      display: block;
+      color: #fff;
+      -webkit-transition: color 0.4s;
+      -moz-transition: color 0.4s;
+      -ms-transition: color 0.4s;
+      -o-transition: color 0.4s;
+      transition: color 0.4s; }
+  .randomColor input[type="submit"] {
+    background: none;
+    opacity: 0;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    -webkit-transition: color 0.4s;
+    -moz-transition: color 0.4s;
+    -ms-transition: color 0.4s;
+    -o-transition: color 0.4s;
+    transition: color 0.4s; }
+
+footer {
+  font-family: sans-serif;
+  font-size: 10pt;
+  line-height: 20pt;
+  font-weight: 400;
+  color: #fff;
+  font-weight: 300;
+  font-size: 9pt;
+  max-width: 338px;
+  margin-top: 10px; }
+  .fonts-loaded footer {
+    font-family: "usual",sans-serif; }
