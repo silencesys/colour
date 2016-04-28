@@ -29,5 +29,15 @@ jQuery(document).ready(function($) {
             $("#c-tips").slideUp({duration: 500});
         }
     });
+    $("#randomColor").hover(
+        function()
+        {
+            $('.fa-refresh').addClass('fa-spin');
+        },
+        function()
+        {
+            $('.fa-refresh').removeClass('fa-spin');
+        }
+    );
 
 });

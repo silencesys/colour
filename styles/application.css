@@ -3,186 +3,190 @@ html, body {
   height: 100%; }
 
 body {
-  background: #cdcdcd;
-  overflow: hidden; }
+  font-size: 100%;
+  position: relative;
+  background: #cdcdcd; }
 
-.colorizer {
-  width: 80%;
-  margin: 4% auto; }
-
-h1 {
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 60pt;
-  line-height: 90pt;
-  font-weight: 400;
-  margin: 0 0 0 -4px; }
-  .fonts-loaded h1 {
-    font-family: "usual",sans-serif; }
-  h1 a {
+header {
+  position: absolute;
+  top: 5.6em;
+  left: 7.5em;
+  width: 24.5em; }
+  header h1 a {
+    font-size: 8em;
     text-decoration: none;
-    color: #fff;
-    -webkit-transition: color 0.4s;
-    -moz-transition: color 0.4s;
-    -ms-transition: color 0.4s;
-    -o-transition: color 0.4s;
-    transition: color 0.4s; }
-
-.findMyColor {
-  width: 340px;
-  padding: 20px 0 0 0; }
-  .findMyColor input {
     font-family: sans-serif;
-    font-size: 10pt;
-    line-height: 20pt;
-    font-weight: 400; }
-    .fonts-loaded .findMyColor input {
-      font-family: "usual",sans-serif; }
-    .findMyColor input[type="text"] {
-      border: 1px solid #fff;
-      background: none;
-      color: #fff;
-      text-indent: 10px;
-      width: 223px;
-      box-sizing: border-box;
-      -webkit-transition: border-color 0.4s;
-      -moz-transition: border-color 0.4s;
-      -ms-transition: border-color 0.4s;
-      -o-transition: border-color 0.4s;
-      transition: border-color 0.4s; }
-    .findMyColor input[type="submit"] {
-      background: #fff;
-      font-size: 10pt;
-      border: 1px solid #f4f4f4;
-      cursor: pointer;
-      margin-left: 5px;
-      -webkit-transition: border-color 0.3s, background 0.5s;
-      -moz-transition: border-color 0.3s, background 0.5s;
-      -ms-transition: border-color 0.3s, background 0.5s;
-      -o-transition: border-color 0.3s, background 0.5s;
-      transition: border-color 0.3s, background 0.5s; }
-
-.mainNavigation {
-  font-family: sans-serif;
-  font-size: 10pt;
-  line-height: 20pt;
-  font-weight: 400;
-  color: #fff;
-  width: 337px;
-  margin: 25px 0 0px 0;
-  padding: 0 0 15px 0;
-  border-bottom: 1px solid #fff; }
-  .fonts-loaded .mainNavigation {
-    font-family: "usual",sans-serif; }
-  .mainNavigation ul {
-    list-style: none;
-    -moz-column-count: 3;
-    -moz-column-gap: inherit;
-    -webkit-column-count: 3;
-    -webkit-column-gap: inherit;
-    column-count: 3;
-    column-gap: inherit; }
-    .mainNavigation ul li {
-      width: 33%; }
-  .mainNavigation a {
+    font-weight: 700;
+    line-height: 1.2em;
+    position: relative;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+    .fonts-loaded header h1 a {
+      font-family: "proxima-nova-soft", sans-serif; }
+    header h1 a:hover {
+      opacity: 0.5; }
+  header a.subtitle {
+    font-size: 1.15em;
     text-decoration: none;
-    color: #fff;
+    float: right;
+    margin: -1.1em 1.2em 0 0;
+    font-family: sans-serif;
     font-weight: 400;
-    font-size: 12pt;
-    display: block;
-    -webkit-transition: color 0.4s;
-    -moz-transition: color 0.4s;
-    -ms-transition: color 0.4s;
-    -o-transition: color 0.4s;
-    transition: color 0.4s; }
+    position: relative;
+    z-index: 10;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+    .fonts-loaded header a.subtitle {
+      font-family: "proxima-nova-soft", sans-serif; }
+    header a.subtitle:hover {
+      opacity: 0.3; }
 
-.container, .tips, .about, .authors {
-  background: #fff;
+.navigationAndTips {
+  position: absolute;
+  top: 7.3em;
+  right: 8em;
   font-family: sans-serif;
-  font-size: 10pt;
-  line-height: 20pt;
-  font-weight: 400;
-  color: #3b3838;
-  width: 307px;
-  padding: 15px;
-  font-weight: 300; }
-  .fonts-loaded .container, .fonts-loaded .tips, .fonts-loaded .about, .fonts-loaded .authors {
-    font-family: "usual",sans-serif; }
-  .container p, .tips p, .about p, .authors p {
-    margin-bottom: 10px; }
+  font-weight: 400; }
+  .fonts-loaded .navigationAndTips {
+    font-family: "proxima-nova-soft", sans-serif; }
+  .navigationAndTips nav ul {
+    list-style-type: none;
+    overflow: hidden; }
+    .navigationAndTips nav ul li {
+      float: right;
+      margin: 0 0 0 4em; }
+      .navigationAndTips nav ul li:last-child {
+        margin: 0; }
+    .navigationAndTips nav ul a {
+      text-decoration: none;
+      display: block;
+      font-size: 1.15em;
+      text-align: left;
+      font-weight: 500;
+      -webkit-transition: opacity 0.5s;
+      -moz-transition: opacity 0.5s;
+      -ms-transition: opacity 0.5s;
+      -o-transition: opacity 0.5s;
+      transition: opacity 0.5s; }
+      .navigationAndTips nav ul a:hover {
+        opacity: 0.3; }
+    .navigationAndTips nav ul:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .navigationAndTips .tips {
+    text-align: right;
+    font-weight: 400;
+    font-size: 1.5em;
+    margin: 2.1em 0 0 0; }
+    .navigationAndTips .tips p {
+      line-height: 1.25em; }
+    .navigationAndTips .tips b {
+      font-weight: 700; }
 
-.about {
-  display: none; }
+.myColorAndRandomColor {
+  width: 34em;
+  position: absolute;
+  margin: 0 50%;
+  left: -17em;
+  bottom: 10em; }
+  .myColorAndRandomColor .myColor {
+    font-family: sans-serif;
+    font-weight: 400;
+    background: none;
+    border: none;
+    border-bottom: 3px solid;
+    width: 100%;
+    text-align: center;
+    font-size: 4.5em; }
+    .fonts-loaded .myColorAndRandomColor .myColor {
+      font-family: "proxima-nova-soft", sans-serif; }
+  .myColorAndRandomColor #randomColor {
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    top: 1em;
+    right: 0;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+    .myColorAndRandomColor #randomColor input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.8em;
+      height: 1.8em;
+      background: none;
+      border: none;
+      cursor: pointer; }
+    .myColorAndRandomColor #randomColor .fa {
+      font-size: 1.5em; }
+    .myColorAndRandomColor #randomColor:hover {
+      opacity: 0.3; }
 
 .authors {
-  display: none; }
-  .authors ul {
-    list-style: none; }
-    .authors ul li {
-      margin-bottom: 10px; }
-
-p a {
-  -webkit-transition: color 0.4s;
-  -moz-transition: color 0.4s;
-  -ms-transition: color 0.4s;
-  -o-transition: color 0.4s;
-  transition: color 0.4s; }
-
-.randomColor {
   position: absolute;
-  right: 7%;
-  bottom: 6%; }
-  .randomColor h2 {
+  text-align: left;
+  width: 45em;
+  left: 7em;
+  bottom: 7em; }
+  .authors h2 {
     font-family: sans-serif;
-    font-size: 60pt;
-    line-height: 90pt;
+    font-weight: 700;
+    font-size: 4.5em;
+    margin: 0 0 0.5em 0; }
+    .fonts-loaded .authors h2 {
+      font-family: "proxima-nova-soft", sans-serif; }
+  .authors ul {
+    list-style: none;
+    font-family: sans-serif;
     font-weight: 400;
-    color: #fff; }
-    .fonts-loaded .randomColor h2 {
-      font-family: "usual",sans-serif; }
-  .randomColor .switchColor {
-    position: absolute;
-    top: 28px;
-    right: -40px; }
-  .randomColor .btnGroup {
-    display: block;
-    width: 30px;
-    height: 30px; }
-    .randomColor .btnGroup .fa {
-      width: 30px;
-      height: 30px;
-      font-size: 20pt;
-      margin: -28px 0 0 3px;
-      display: block;
-      color: #fff;
-      -webkit-transition: color 0.4s;
-      -moz-transition: color 0.4s;
-      -ms-transition: color 0.4s;
-      -o-transition: color 0.4s;
-      transition: color 0.4s; }
-  .randomColor input[type="submit"] {
-    background: none;
-    opacity: 0;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    -webkit-transition: color 0.4s;
-    -moz-transition: color 0.4s;
-    -ms-transition: color 0.4s;
-    -o-transition: color 0.4s;
-    transition: color 0.4s; }
+    font-size: 1.15em;
+    line-height: 1.2em; }
+    .fonts-loaded .authors ul {
+      font-family: "proxima-nova-soft", sans-serif; }
+    .authors ul li {
+      margin: 0 0 0.75em 0; }
+      .authors ul li:last-child {
+        margin-top: 2.5em; }
+
+.about {
+  position: absolute;
+  text-align: left;
+  width: 45em;
+  left: 7em;
+  bottom: 7em; }
+  .about h2 {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 4.5em;
+    margin: 0 0 0.5em 0; }
+    .fonts-loaded .about h2 {
+      font-family: "proxima-nova-soft", sans-serif; }
+  .about p {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.15em;
+    line-height: 1.2em;
+    margin-bottom: 1.2em; }
+    .fonts-loaded .about p {
+      font-family: "proxima-nova-soft", sans-serif; }
 
 footer {
   font-family: sans-serif;
-  font-size: 10pt;
-  line-height: 20pt;
   font-weight: 400;
-  color: #fff;
-  font-weight: 300;
-  font-size: 9pt;
-  max-width: 338px;
-  margin-top: 10px; }
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 2em;
+  right: 8em;
+  opacity: 0.5; }
   .fonts-loaded footer {
-    font-family: "usual",sans-serif; }
+    font-family: "proxima-nova-soft", sans-serif; }

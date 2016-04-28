@@ -1,8 +1,19 @@
 // font-family: "usual"
 
+// VARIABLES
+// -----------------------------------------------------------------
 $basicGrey : #cdcdcd;
 
-
+// MIXINS
+// -----------------------------------------------------------------
+@mixin transition($transition...)
+{
+    -webkit-transition: $transition;
+       -moz-transition: $transition;
+        -ms-transition: $transition;
+         -o-transition: $transition;
+            transition: $transition;
+}
 @mixin columns($count, $gap)
 {
     -moz-column-count: $count;
@@ -12,37 +23,24 @@ $basicGrey : #cdcdcd;
     column-count: $count;
     column-gap: $gap;
 }
-@mixin transition($transition...)
-{
-    -webkit-transition: $transition;
-       -moz-transition: $transition;
-        -ms-transition: $transition;
-         -o-transition: $transition;
-            transition: $transition;
-}
-
 @mixin heading
 {
     font-family: sans-serif;
-    font-size: 60pt;
-    line-height: 90pt;
-    font-weight: 400;
+    font-weight: 700;
 
     .fonts-loaded &
     {
-        font-family: "usual",sans-serif;
+        font-family: "proxima-nova-soft", sans-serif;
     }
 }
 @mixin paragraph
 {
     font-family: sans-serif;
-    font-size: 10pt;
-    line-height: 20pt;
     font-weight: 400;
 
     .fonts-loaded &
     {
-        font-family: "usual",sans-serif;
+        font-family: "proxima-nova-soft", sans-serif;
     }
 }
 
@@ -55,178 +53,213 @@ html
 body
 {
     @extend html;
+    font-size: 100%;
+    position: relative;
     background: $basicGrey;
-    overflow: hidden;
 }
-
-.colorizer
+header
 {
-    width: 80%;
-    margin: 4% auto;
-}
-h1{
-    color: #fff;
-    @include heading;
-    margin: 0 0 0 -4px;
-    a
+    position: absolute;
+    top:  5.6em;
+    left: 7.5em;
+    width: 24.5em;
+
+    h1 a
     {
+        font-size: 8em;
         text-decoration: none;
-        color: #fff;
-        @include transition(color .4s);
+        @include heading;
+        line-height: 1.2em;
+        position: relative;
+        @include transition(opacity .5s);
+        &:hover
+        {
+            opacity: 0.5;
+        }
     }
-}
-.findMyColor
-{
-    width: 340px;
-    padding: 20px 0 0 0;
-    input
+    a.subtitle
     {
+        font-size: 1.15em;
+        text-decoration: none;
+        float: right;
+        margin: -1.1em 1.2em 0 0;
         @include paragraph;
-
-        &[type="text"]
+        position: relative;
+        z-index: 10;
+        @include transition(opacity .5s);
+        &:hover
         {
-            border: 1px solid #fff;
-            background: none;
-            color: #fff;
-            text-indent: 10px;
-            width: 223px;
-            box-sizing: border-box;
-            @include transition(border-color .4s);
-        }
-        &[type="submit"]
-        {
-            background: #fff;
-            font-size: 10pt;
-            border: 1px solid #f4f4f4;
-            cursor: pointer;
-            margin-left: 5px;
-            @include transition(border-color 0.3s, background 0.5s);
+            opacity: 0.3;
         }
     }
 }
-.mainNavigation
+.navigationAndTips
 {
+    position: absolute;
+    top:   7.3em;
+    right: 8em;
     @include paragraph;
-    color: #fff;
-    width: 337px;
-    margin: 25px 0 0px 0;
-    padding: 0 0 15px 0;
-    border-bottom: 1px solid #fff;
 
-    ul
+    nav ul
     {
-        list-style: none;
-        @include columns(3, inherit);
+        list-style-type: none;
+        overflow: hidden;
 
         li
         {
-            width: 33%;
+            float: right;
+            margin: 0 0 0 4em;
+
+            &:last-child
+            {
+                margin: 0;
+            }
+        }
+        a
+        {
+            text-decoration: none;
+            display: block;
+            font-size: 1.15em;
+            text-align: left;
+            font-weight: 500;
+            @include transition(opacity .5s);
+            &:hover
+            {
+                opacity: 0.3;
+            }
+        }
+        &:after
+        {
+            content: "";
+            display: table;
+            clear: both;
         }
     }
-    a
-    {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 400;
-        font-size: 12pt;
-        display: block;
-        @include transition(color .4s);
-    }
-}
-.container
-{
-    background: #fff;
-    @include paragraph;
-    color: #3b3838;
-    width: 307px;
-    padding: 15px;
-    font-weight: 300;
 
-    p
+    .tips
     {
-        margin-bottom: 10px;
+        text-align: right;
+        font-weight: 400;
+        font-size: 1.5em;
+        margin: 2.1em 0 0 0;
+
+        p
+        {
+           line-height: 1.25em;
+        }
+        b
+        {
+            font-weight: 700;
+        }
     }
 }
-.tips
+.myColorAndRandomColor
 {
-    @extend .container;
-}
-.about
-{
-    @extend .container;
-    display: none;
+    width: 34em;
+    position: absolute;
+    margin: 0 50%;
+    left: -17em;
+    bottom: 10em;
+
+    .myColor
+    {
+        @include paragraph;
+        background: none;
+        border: none;
+        border-bottom: 3px solid;
+        width: 100%;
+        text-align: center;
+        font-size: 4.5em;
+    }
+    #randomColor
+    {
+        width:  1.5em;
+        height: 1.5em;
+        position: absolute;
+        top: 1em;
+        right: 0;
+        @include transition(opacity 0.5s);
+
+        input
+        {
+            position: absolute;
+            top:  0;
+            left: 0;
+            width:  1.8em;
+            height: 1.8em;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .fa
+        {
+            font-size: 1.5em;
+        }
+        &:hover
+        {
+            opacity: 0.3;
+        }
+    }
 }
 .authors
 {
-    @extend .container;
-    display: none;
-
-    ul
-    {
-        list-style: none;
-        li
-        {
-            margin-bottom: 10px;
-        }
-    }
-}
-
-p a
-{
-    @include transition(color .4s);
-}
-
-.randomColor
-{
     position: absolute;
-    right: 7%;
-    bottom: 6%;
+    text-align: left;
+    width: 45em;
+    left: 7em;
+    bottom: 7em;
+
     h2
     {
         @include heading;
-        color: #fff;
+        font-size: 4.5em;
+        margin: 0 0 0.5em 0;
     }
-    .switchColor
+    ul
     {
-        position: absolute;
-        top: 28px;
-        right: -40px;
-    }
-    .btnGroup
-    {
-        display: block;
-        width: 30px;
-        height: 30px;
-        .fa
+        list-style: none;
+        @include paragraph;
+        font-size: 1.15em;
+        line-height: 1.2em;
+        li
         {
-            width: 30px;
-            height: 30px;
-            font-size: 20pt;
-            margin: -28px 0 0 3px;
-            display: block;
-            color: #fff;
-            @include transition(color 0.4s);
+            margin: 0 0 0.75em 0;
+            &:last-child
+            {
+                margin-top: 2.5em;
+            }
         }
     }
-    input[type="submit"]
+}
+.about
+{
+    position: absolute;
+    text-align: left;
+    width: 45em;
+    left: 7em;
+    bottom: 7em;
+
+    h2
     {
-        background: none;
-        opacity: 0;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        @include transition(color 0.4s);
+        @include heading;
+        font-size: 4.5em;
+        margin: 0 0 0.5em 0;
+    }
+    p
+    {
+        @include paragraph;
+        font-size: 1.15em;
+        line-height: 1.2em;
+        margin-bottom: 1.2em;
     }
 }
-
 footer
 {
     @include paragraph;
-    color: #fff;
-    font-weight: 300;
-    font-size: 9pt;
-    max-width: 338px;
-    margin-top: 10px;
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 2em;
+    right: 8em;
+    opacity: 0.5;
 }

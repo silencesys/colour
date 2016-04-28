@@ -11,8 +11,11 @@ function colorizer()
         'hex_color'     => $hex_random_color,
         'rgb_color'     => hex2rgb($hex_random_color)
     ];
-    if(isset($_GET["color"])){$color['get_color'] = $_GET["color"];}
-    // echo trim($color['get_color'], '#');
+    if(isset($_GET["color"]))
+    {
+        $clean_color        = str_replace(['#', 'rgb', '(', ')'], '', $_GET["color"]);
+        $color['get_color'] = $clean_color;
+    }
     $rgb_rule = preg_match('/(([0-9]{1},|[1-9]{1}[0-9]{1},|[1]{1}[0-9]{2},|[2]{1}[0-4]{1}[0-9]{1},|25[0-5]{1},){2}([0-9]{1}|[1-9]{1}[0-9]{1}|[1]{1}[0-9]{2}|[2]{1}[0-4]{1}[0-9]{1}|25[0-5]{1}){1})$/', $color['get_color']);
     $hex_rule = preg_match('/^[a-fA-F\d+]+$/', $color['get_color']);
 
@@ -34,6 +37,11 @@ function colorizer()
             'rgb_color'     => $rgbColor,
             'text_color' => contrastColor($color['get_color'])
         ];
+        return $color;
+    }
+    elseif($color['get_color'] == 'random')
+    {
+        $color['text_color'] = contrastColor($hex_random_color);
         return $color;
     }
     elseif(isset($color['get_color']))
