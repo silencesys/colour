@@ -46,6 +46,9 @@ function colorizer()
     }
     elseif(isset($color['get_color']))
     {
+        $color['text_color'] = contrastColor($hex_random_color);
+        $color['message'] = 'Wrong format above is random colour.';
+        return $color;
     }
     else
     {

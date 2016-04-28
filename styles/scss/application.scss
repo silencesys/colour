@@ -201,6 +201,15 @@ header
             opacity: 0.3;
         }
     }
+    .wrongFormat
+    {
+        @include paragraph;
+        font-size: 1.15em;
+        line-height: 1.25em;
+        text-align: center;
+        height: 1.25em;
+        margin: 0.5em 0 -1.75em;
+    }
 }
 .authors
 {

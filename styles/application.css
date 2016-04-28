@@ -131,6 +131,16 @@ header {
       font-size: 1.5em; }
     .myColorAndRandomColor #randomColor:hover {
       opacity: 0.3; }
+  .myColorAndRandomColor .wrongFormat {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.15em;
+    line-height: 1.25em;
+    text-align: center;
+    height: 1.25em;
+    margin: 0.5em 0 -1.75em; }
+    .fonts-loaded .myColorAndRandomColor .wrongFormat {
+      font-family: "proxima-nova-soft", sans-serif; }
 
 .authors {
   position: absolute;

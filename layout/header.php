@@ -26,7 +26,8 @@
         .authors h2,
         .authors ul,
         .about,
-        footer
+        footer,
+        .wrongFormat
         {color: #<?php echo $color['text_color'] ?>;}
 
         .myColor

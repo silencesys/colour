@@ -7,5 +7,11 @@
         <i class="fa fa-refresh" aria-hidden="true"></i>
         <input type="submit" value=" ">
     </form>
+    <?php
+    if(isset($color['message']))
+    {
+        echo '<p class="wrongFormat"><b>Error:</b> '.$color['message'].'</p>';
+    }
+    ?>
 </section>
 <?php include 'layout/footer.php'; ?>
