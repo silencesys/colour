@@ -1,7 +1,9 @@
 <?php
-function PrintRcolor()
-{   // fce pro generovani nahodneho HEX kodu
-    printf("%06x",rand(0,16777215)); // vytiskne nahodny HEX kod ("#%06x" lze take použít aby byl na prvním místě #
+
+// Print random colour
+function printRandomColour()
+{
+    printf("%06x",rand(0,16777215));
 }
 
 function generateRandomColor(){ // fce pro generováí náhodného HEX kódu, generuje i s #
