@@ -22,7 +22,7 @@ function colorizer()
         $color = [
             'hex_color'     => $hexColor,
             'rgb_color'     => $color['get_color'],
-            'inverse_color' => contrastColor($hexColor)
+            'text_color' => contrastColor($hexColor)
         ];
         return $color;
     }
@@ -32,7 +32,7 @@ function colorizer()
         $color = [
             'hex_color'     => $color['get_color'],
             'rgb_color'     => $rgbColor,
-            'inverse_color' => contrastColor($color['get_color'])
+            'text_color' => contrastColor($color['get_color'])
         ];
         return $color;
     }
@@ -41,7 +41,7 @@ function colorizer()
     }
     else
     {
-        $color['inverse_color'] = contrastColor($hex_random_color);
+        $color['text_color'] = contrastColor($hex_random_color);
         return $color;
     }
 }
