@@ -1,4 +1,4 @@
-<?php include '/layout/header.php'; ?>
+<?php include 'layout/header.php'; ?>
 <section class="myColorAndRandomColor">
     <form action="<?php echo $base_url; ?>" method="get">
         <input type="text" value="#<?php echo $color['hex_color']; ?>" name="color" class="myColor" placeholder="#random">
@@ -8,4 +8,4 @@
         <input type="submit" value=" ">
     </form>
 </section>
-<?php include '/layout/footer.php'; ?>
+<?php include 'layout/footer.php'; ?>

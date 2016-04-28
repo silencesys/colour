@@ -1,4 +1,4 @@
-<?php include '/layout/header.php'; ?>
+<?php include 'layout/header.php'; ?>
 <section class="about">
     <h2>About</h2>
 
@@ -13,4 +13,4 @@
         You know what? Current colour is #<?php echo $color['hex_color']; ?>.
     </p>
 </section>
-<?php include '/layout/footer.php'; ?>
+<?php include 'layout/footer.php'; ?>

@@ -1,4 +1,4 @@
-<?php include '/layout/header.php'; ?>
+<?php include 'layout/header.php'; ?>
 <section class="authors">
     <h2>Authors</h2>
 
@@ -18,4 +18,4 @@
         <li>Contact us at colour[at]oculum.ink. <br> PS. Current colour is #<?php echo $color['hex_color']; ?>.</li>
     </ul>
 </section>
-<?php include '/layout/footer.php'; ?>
+<?php include 'layout/footer.php'; ?>

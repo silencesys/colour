@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<!--#if expr="$HTTP_COOKIE=/fonts\-loaded\=true/" -->
+<html lang="en" class="fonts-loaded">
+<!--#else -->
 <html lang="en">
+<!--#endif -->
 <head>
     <title>Color - <?php echo $color['hex_color']; ?></title>
     <!-- META -->

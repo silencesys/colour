@@ -20,22 +20,22 @@
     {
         if(isset($routes[2]) == 'random' || $routes[3] = isset($_GET['color']))
         {
-            include '/layout/api/json_response.php';
+            include 'layout/api/json_response.php';
         }
         else
         {
-            include '/layout/api/api.php';
+            include 'layout/api/api.php';
         }
     }
     elseif($routes[1] == 'authors')
     {
-        include '/layout/authors.php';
+        include 'layout/authors.php';
     }
     elseif($routes[1] == 'about')
     {
-        include '/layout/about.php';
+        include 'layout/about.php';
     }
     else
     {
-        include '/layout/colorizer.php';
+        include 'layout/colorizer.php';
     }
