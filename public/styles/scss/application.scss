@@ -2,7 +2,8 @@
 
 // VARIABLES
 // -----------------------------------------------------------------
-$basicGrey : #cdcdcd;
+$basicGrey   : #cdcdcd;
+$smallscreen : 'screen and (max-width : 1366px)';
 
 // MIXINS
 // -----------------------------------------------------------------
@@ -56,6 +57,10 @@ body
     font-size: 100%;
     position: relative;
     background: $basicGrey;
+    @media #{$smallscreen}
+    {
+        font-size: 85%;
+    }
 }
 header
 {
