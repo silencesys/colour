@@ -96,9 +96,9 @@ header {
 .myColorAndRandomColor {
   width: 40em;
   position: absolute;
-  margin: 0 50%;
-  left: -20em;
-  bottom: 9em; }
+  margin: 0;
+  left: 7em;
+  bottom: 10em; }
   .myColorAndRandomColor .myColor {
     font-family: sans-serif;
     font-weight: 400;
@@ -106,7 +106,7 @@ header {
     border: none;
     border-bottom: 3px solid;
     width: 100%;
-    text-align: center;
+    text-align: left;
     font-size: 4.5em; }
     .fonts-loaded .myColorAndRandomColor .myColor {
       font-family: "proxima-nova-soft", sans-serif; }
@@ -114,8 +114,8 @@ header {
     width: 1.5em;
     height: 1.5em;
     position: absolute;
-    top: 1em;
-    right: 0;
+    top: 1.5em;
+    right: 0em;
     -webkit-transition: opacity 0.5s;
     -moz-transition: opacity 0.5s;
     -ms-transition: opacity 0.5s;
@@ -139,7 +139,7 @@ header {
     font-weight: 400;
     font-size: 1.15em;
     line-height: 1.25em;
-    text-align: center;
+    text-align: left;
     height: 1.25em;
     margin: 0.5em 0 -1.75em; }
     .fonts-loaded .myColorAndRandomColor .wrongFormat {

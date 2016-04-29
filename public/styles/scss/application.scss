@@ -162,9 +162,9 @@ header
 {
     width: 40em;
     position: absolute;
-    margin: 0 50%;
-    left: -20em;
-    bottom: 9em;
+    margin: 0;
+    left: 7em;
+    bottom: 10em;
 
     .myColor
     {
@@ -173,7 +173,7 @@ header
         border: none;
         border-bottom: 3px solid;
         width: 100%;
-        text-align: center;
+        text-align: left;
         font-size: 4.5em;
     }
     #randomColor
@@ -181,8 +181,8 @@ header
         width:  1.5em;
         height: 1.5em;
         position: absolute;
-        top: 1em;
-        right: 0;
+        top: 1.5em;
+        right: 0em;
         @include transition(opacity 0.5s);
 
         input
@@ -211,7 +211,7 @@ header
         @include paragraph;
         font-size: 1.15em;
         line-height: 1.25em;
-        text-align: center;
+        text-align: left;
         height: 1.25em;
         margin: 0.5em 0 -1.75em;
     }
