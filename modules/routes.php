@@ -1,9 +1,8 @@
 <?php
-$base_url = $_SERVER['REQUEST_URI'];
-$routes = [];
-$routes = explode('/', $base_url);
+$web_url = $_SERVER['REQUEST_URI'];
+$routes  = [];
+$routes  = explode('/', $web_url);
 
-$color  = Colorizer();
 $base_url = '/';
 
 // because of localhost testing with easyphp
