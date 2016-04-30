@@ -4,6 +4,8 @@ It's an application which gives random colour to it's visitors everytime they op
 ## Instalation
 Colour is simple application, just copy it where you want and it will run.
 
+Released versions for download available at [tags](https://gitlab.com/Silencesys/colour/tags).
+
 ## Folder structure
 + `./api` - contains all api functions
 + `./functions` - something like controllers, app logic
