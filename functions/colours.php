@@ -7,9 +7,11 @@ function colorizer()
 {
     $hex_random_color = randomColor()['hex'];
     $color = [
-        'get_color'     => null,
-        'hex_color'     => $hex_random_color,
-        'rgb_color'     => hex2rgb($hex_random_color)
+        'get_color'          => null,
+        'hex_color'          => $hex_random_color,
+        'rgb_color'          => hex2rgb($hex_random_color),
+        'contemporary_color' => contemporaryColour($hex_random_color),
+        'text_color'         => contrastColor($hex_random_color)
     ];
     if(isset($_GET["color"]))
     {
@@ -23,9 +25,10 @@ function colorizer()
     {
         $hexColor = rgb2hex($color['get_color']);
         $color = [
-            'hex_color'     => $hexColor,
-            'rgb_color'     => $color['get_color'],
-            'text_color' => contrastColor($hexColor)
+            'hex_color'          => $hexColor,
+            'rgb_color'          => $color['get_color'],
+            'text_color'         => contrastColor($hexColor),
+            'contemporary_color' => contemporaryColour($hex_random_color)
         ];
         return $color;
     }
@@ -33,26 +36,24 @@ function colorizer()
     {
         $rgbColor = hex2rgb($color['get_color']);
         $color = [
-            'hex_color'     => $color['get_color'],
-            'rgb_color'     => $rgbColor,
-            'text_color' => contrastColor($color['get_color'])
+            'hex_color'          => $color['get_color'],
+            'rgb_color'          => $rgbColor,
+            'text_color'         => contrastColor($color['get_color']),
+            'contemporary_color' => contemporaryColour($hex_random_color)
         ];
         return $color;
     }
     elseif($color['get_color'] == 'random')
     {
-        $color['text_color'] = contrastColor($hex_random_color);
         return $color;
     }
     elseif(isset($color['get_color']))
     {
-        $color['text_color'] = contrastColor($hex_random_color);
         $color['message'] = 'You\'ve entered wrong formated string for a colour.<br> So instead we are giving you a random one.';
         return $color;
     }
     else
     {
-        $color['text_color'] = contrastColor($hex_random_color);
         return $color;
     }
 }
@@ -147,9 +148,7 @@ function contrastColor($hex)
     }
 }
 
-
-/* Complementary colours
-function colorInverse($color){
+function contemporaryColour($color){
     $color = str_replace('#', '', $color);
     if (strlen($color) != 6){ return '000000'; }
     $rgb = '';
@@ -158,6 +157,5 @@ function colorInverse($color){
         $c = ($c < 0) ? 0 : dechex($c);
         $rgb .= (strlen($c) < 2) ? '0'.$c : $c;
     }
-    return '#'.$rgb;
+    return $rgb;
 }
-*/

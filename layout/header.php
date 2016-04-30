@@ -32,6 +32,11 @@
 
             .myColor
             {border-color: #<?php echo $color['text_color'] ?>;}
+
+            ::selection
+            {background: #<?php echo $color['contemporary_color'] ?>; color: #<?php echo $color['hex_color']; ?>;}
+            ::-moz-selection
+            {background: #<?php echo $color['contemporary_color'] ?>; color: #<?php echo $color['hex_color']; ?>;}
         </style>
     </head>
     <!-- HEAD END -->
