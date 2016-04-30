@@ -3,7 +3,8 @@ It's an application and class which generates random colour in HEX, RGB and HSL.
 
 ## API
 Colour has also own API which gives response in json. You can define [your own colour](http://colour.oculum.ink/api/532a33) or [generate random](http://colour.oculum.ink/api/random).
-Response is in array
+
+__Response is an array:__
 ```php
 {
 "my_colour":"532a33",
@@ -39,16 +40,16 @@ Response is in array
 ```
 
 ## Instalation
-You can choose between colour as application or standalone class which is located in `./modules/classes/`.
+You can choose between colour as an application or class which is located at `./modules/classes/`.
 
-Released versions for download are available at [tags](https://gitlab.com/Silencesys/colour/tags).
+Released versions are available at [tags section](https://gitlab.com/Silencesys/colour/tags).
 
 ### Application
-Just copy it on FTP and visit domain where is your clone located.
-Voila! A colorfull unicorn is running.
+Just copy it on FTP and visit domain where is your clone of colour located.
+Voila! A colourfull unicorn is running.
 
 ### Class
-Copy it where you want. And then include in your file.
+Copy it where you want. And then include in your project.
 ```php
 require_once("/your/path/to/colour.php");
 ```
@@ -57,7 +58,7 @@ Then inicialize it like
 $c = new OculumINK\Colour();
 $color = $c->colour();
 ```
-There is more functions for disposal.
+There are more functions for disposal.
 + rgbToHex($rgb) - convert RGB colour to HEX, parameter must be an array.
 + hexToRgb($hex) - HEX to RGB and returns RGB as an array.
 + hexToHsl($hex) - HEX to HSL and returns HSL as an array.
