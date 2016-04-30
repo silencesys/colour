@@ -60,21 +60,6 @@ class Colour {
     }
     /**
      *
-     * Calculate colour brightness
-     * @param  string $hex
-     * @return float Colour brightness
-     *
-     */
-    public static function colourBrightness($hex) {
-        $c_r = hexdec(substr($hex, 0, 2));
-        $c_g = hexdec(substr($hex, 2, 2));
-        $c_b = hexdec(substr($hex, 4, 2));
-
-        $brightness = (($c_r * 299) + ($c_g * 587) + ($c_b * 114)) / 1000;
-        return $brightness;
-    }
-    /**
-     *
      * Convert HEX to HSL
      * @param  string $colour
      * @return array HSL colours as array
@@ -180,6 +165,21 @@ class Colour {
     }
     /**
      *
+     * Calculate colour brightness
+     * @param  string $hex
+     * @return float Colour brightness
+     *
+     */
+    public static function colourBrightness($hex) {
+        $c_r = hexdec(substr($hex, 0, 2));
+        $c_g = hexdec(substr($hex, 2, 2));
+        $c_b = hexdec(substr($hex, 4, 2));
+
+        $brightness = (($c_r * 299) + ($c_g * 587) + ($c_b * 114)) / 1000;
+        return $brightness;
+    }
+    /**
+     *
      * Returns the complimentary color
      * @return string Complementary RGB color
      *
@@ -189,7 +189,7 @@ class Colour {
         $hsl['H'] += ($hsl['H']>180) ? -180 : 180;
         $hsl['L'] = 1 - $hsl['L'];
         // return RGB
-        return self::hslToRgb($hsl);
+        return $hsl;
     }
     /**
      *
@@ -235,7 +235,7 @@ class Colour {
             $myColour = str_replace(['#', '(', ')'], '', $myColour);
 
             // validate and replace unwanted characters
-            if(strpos($myColour, 'rgb') !== false )
+            if(strpos($myColour, 'rgb') !== false || strpos($myColour, 'rgb') == false && strpos($myColour, ',') !== false)
             {
                 $myColour = str_replace(['rgb'], '', $myColour);
                 if(strpos($myColour, ',') !== false)
@@ -252,7 +252,6 @@ class Colour {
                     $split = $length / 3;
                     $myColour = str_split($myColour, $split);
                 }
-
                 $myColour = [
                     'R' => $myColour['0'],
                     'G' => $myColour['1'],
@@ -270,8 +269,9 @@ class Colour {
                 $hex           = self::rgbToHex($myColour);
                 $rgb           = $myColour;
                 $hsl           = self::hexToHsl($hex);
-                $complementary = self::complementary($hsl);
                 $text          = self::contrastColour($hex);
+                $raw_compl     = self::complementary($hsl);
+                $complementary = self::hslToRgb($raw_compl);
                 $error_code    = 'C01'; // NONE
             }
             elseif($hex_rule)
@@ -280,7 +280,8 @@ class Colour {
                 $rgb           = self::hexToRgb($myColour);
                 $hsl           = self::hexToHsl($myColour);
                 $text          = self::contrastColour($myColour);
-                $complementary = self::complementary($hsl);
+                $raw_compl     = self::complementary($hsl);
+                $complementary = self::hslToRgb($raw_compl);
                 $error_code    = 'C01'; // NONE
             }
             elseif($myColour == 'random' || $myColour == 'Random')
@@ -290,7 +291,8 @@ class Colour {
                 $rgb           = $random['rgb'];
                 $hsl           = $random['hsl'];
                 $text          = self::contrastColour($hex);
-                $complementary = self::complementary($hsl);
+                $raw_compl     = self::complementary($hsl);
+                $complementary = self::hslToRgb($raw_compl);
                 $error_code    = 'C02'; // RANDOM
             }
             else
@@ -300,7 +302,8 @@ class Colour {
                 $rgb           = $random['rgb'];
                 $hsl           = $random['hsl'];
                 $text          = self::contrastColour($hex);
-                $complementary = self::complementary($hsl);
+                $raw_compl     = self::complementary($hsl);
+                $complementary = self::hslToRgb($raw_compl);
                 $error_code    = 'C03'; // WRONG FORMAT
             }
         }
@@ -311,19 +314,21 @@ class Colour {
             $rgb           = $random['rgb'];
             $hsl           = $random['hsl'];
             $text          = self::contrastColour($hex);
-            $complementary = self::complementary($hsl);
+            $raw_compl     = self::complementary($hsl);
+            $complementary = self::hslToRgb($raw_compl);
             $error_code    = 'C00'; // NOTHING SPECIFIED
         }
         // return!
         return $colour = [
-            'my_colour'         => $myColour,
-            'hex'               => $hex,
-            'rgb'               => $rgb,
-            'hsl'               => $hsl,
-            'text'              => $text,
-            'complementary'     => $complementary,
-            'complementary_hex' => self::rgbToHex($complementary),
-            'error_code'        => $error_code
+            'my_colour'  => $myColour,
+            'hex'        => $hex,
+            'rgb'        => $rgb,
+            'hsl'        => $hsl,
+            'text'       => $text,
+            'compl_hsl'  => $raw_compl,
+            'compl_hex'  => self::rgbToHex($complementary),
+            'compl_rgb'  => $complementary,
+            'error_code' => $error_code
         ];
     }
 

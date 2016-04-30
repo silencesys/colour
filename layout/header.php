@@ -35,9 +35,9 @@
             {border-color: #<?php echo $color['text'] ?>;}
 
             ::selection
-            {background: #<?php echo $color['complementary_hex'] ?>; color: #<?php echo $color['hex']; ?>;}
+            {background: #<?php echo $color['compl_hex'] ?>; color: #<?php echo $color['hex']; ?>;}
             ::-moz-selection
-            {background: #<?php echo $color['complementary_hex'] ?>; color: #<?php echo $color['hex']; ?>;}
+            {background: #<?php echo $color['compl_hex'] ?>; color: #<?php echo $color['hex']; ?>;}
         </style>
     </head>
     <!-- HEAD END -->
