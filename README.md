@@ -3,7 +3,8 @@
 
 ## API
 Colour has also own API which gives response in json. You can define [your own colour](http://colour.oculum.ink/api/532a33) or [generate random](http://colour.oculum.ink/api/random).
-Response is in array
+
+__Response is an array:__
 ```php
 {
 "my_colour":"532a33",
@@ -39,13 +40,13 @@ Response is in array
 ```
 
 ## Instalation
-You can choose between colour as application or standalone class which is located in `./modules/classes/`.
+You can choose between colour as an application or class which is located at `./modules/classes/`.
 
-Released versions for download are available at [tags](https://gitlab.com/Silencesys/colour/tags).
+Released versions are available at [tags section](https://gitlab.com/Silencesys/colour/tags).
 
 ### Application
-Just copy it on FTP and visit domain where is your clone located.
-Voila! A colorfull unicorn is running.
+Just copy it on FTP and visit domain where your clone of colour is located.
+Voila! A colourfull unicorn is running.
 
 ### Class
 Copy it wherever you want. And then add to your file.
@@ -70,15 +71,15 @@ There are more functions for disposal.
 #### Colour() response
 Colour() response is an array with these columns.
 ```php
-    'my_colour'  => given variable, can be also null
-    'hex'        => original colour in HEX formate
-    'rgb'        => the same colour as HEX but RGB
-    'hsl'        => main colour formated as HSL
-    'text'       => text colour - white or black, based on brightness
-    'compl_hsl'  => complementary colour in HSL
-    'compl_hex'  => complementary colour converted to HEX
-    'compl_rgb'  => complementary colour in RGB
-    'error_code' => error code, which is given with every response
+'my_colour'  => given variable, can be also null
+'hex'        => original colour in HEX formate
+'rgb'        => the same colour as HEX but RGB
+'hsl'        => main colour formated as HSL
+'text'       => text colour - white or black, based on brightness
+'compl_hsl'  => complementary colour in HSL
+'compl_hex'  => complementary colour converted to HEX
+'compl_rgb'  => complementary colour in RGB
+'error_code' => error code, which is given with every response
 ```
 
 #### Error codes
