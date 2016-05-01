@@ -1,5 +1,5 @@
 # Colour
-It's an application and class which generates random colour in HEX, RGB and HSL. For this colour also application find a complementary colour in all supported formats and select white or black based on colour brightness.
+"Colour" is an application and a class which generates a random colour in HEX, RGB and HSL. Moreover, the application also shows a complementary colour in all supported formats and select white or black based on colour brightness.
 
 ## API
 Colour has also own API which gives response in json. You can define [your own colour](http://colour.oculum.ink/api/532a33) or [generate random](http://colour.oculum.ink/api/random).
@@ -48,7 +48,7 @@ Just copy it on FTP and visit domain where is your clone located.
 Voila! A colorfull unicorn is running.
 
 ### Class
-Copy it where you want. And then include in your file.
+Copy it wherever you want. And then add to your file.
 ```php
 require_once("/your/path/to/colour.php");
 ```
@@ -57,22 +57,22 @@ Then inicialize it like
 $c = new OculumINK\Colour();
 $color = $c->colour();
 ```
-There is more functions for disposal.
+There are more functions for disposal.
 + rgbToHex($rgb) - convert RGB colour to HEX, parameter must be an array.
 + hexToRgb($hex) - HEX to RGB and returns RGB as an array.
 + hexToHsl($hex) - HEX to HSL and returns HSL as an array.
 + hslToRgb($hsl) - HSL to RGB which is returned as an array, also parameter must be an array.
 + colourBrightness($hex) - calculate colour brightness and returns float.
 + complementary($hsl) - calculate complementary colour, parameter must be an HSL array and returns also HSL array.
-+ randomColour() - generate random colour based on RGB and then also returns array with HEX and HSL, RGB and HSL are arrays.
-+ colour($myColour = null) - returns array with given variable, HEX, RGB, HSL colours and complementary colour in HEX, RGB and HSL. Also contains error_code information and text colour.
++ randomColour() - generates a random colour based on RGB and then  returns array with HEX and HSL, RGB and HSL are arrays.
++ colour($myColour = null) - returns an array with given variable, HEX, RGB, HSL colours and complementary colour in HEX, RGB and HSL. Also contains error_code information and text colour.
 
 #### Colour() response
 Colour() response is an array with these columns.
 ```php
     'my_colour'  => given variable, can be also null
     'hex'        => original colour in HEX formate
-    'rgb'        => same colour as HEX but RGB
+    'rgb'        => the same colour as HEX but RGB
     'hsl'        => main colour formated as HSL
     'text'       => text colour - white or black, based on brightness
     'compl_hsl'  => complementary colour in HSL
