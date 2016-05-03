@@ -242,7 +242,7 @@ class Colour {
         $comp_hsl      = self::complementary($main_hsl);
         $comp_rgb      = self::hslToRgb($comp_hsl);
         $comp_hex      = self::rgbToHex($comp_rgb);
-        $error_code    = 'C00'; // NOTHING SPECIFIED
+        $error_code    = 'C00E'; // NOTHING SPECIFIED
 
         if(isset($myColour))
         {
@@ -311,7 +311,7 @@ class Colour {
                 $comp_hsl      = self::complementary($main_hsl);
                 $comp_rgb      = self::hslToRgb($comp_hsl);
                 $comp_hex      = self::rgbToHex($comp_rgb);
-                $error_code    = 'C01'; // NONE
+                $error_code    = 'C01E'; // NONE
             }
             elseif($hex_rule)
             {
@@ -323,7 +323,7 @@ class Colour {
                 $comp_hsl      = self::complementary($main_hsl);
                 $comp_rgb      = self::hslToRgb($comp_hsl);
                 $comp_hex      = self::rgbToHex($comp_rgb);
-                $error_code    = 'C01'; // NONE
+                $error_code    = 'C01E'; // NONE
             }
             elseif($hsl_rule)
             {
@@ -335,18 +335,18 @@ class Colour {
                 $comp_hsl      = self::complementary($myColour);
                 $comp_rgb      = self::hslToRgb($comp_hsl);
                 $comp_hex      = self::rgbToHex($comp_rgb);
-                $error_code    = 'C01'; // NONE
+                $error_code    = 'C01E'; // NONE
 
             }
             elseif($myColour == 'random' || $myColour == 'Random')
             {
                 $my_colour     = 'C02'; // Random colour
-                $error_code    = 'C02'; // RANDOM
+                $error_code    = 'C02E'; // RANDOM
             }
             else
             {
                 $my_colour     = 'C03'; // Wrong format
-                $error_code    = 'C03'; // WRONG FORMAT
+                $error_code    = 'C03E'; // WRONG FORMAT
             }
         }
         // return!

@@ -2,39 +2,40 @@
 "Colour" is an application and a class which generates a random colour in HEX, RGB and HSL. Moreover, the application also shows a complementary colour in all supported formats and select white or black based on colour brightness.
 
 ## API
-Colour has also own API which gives response in json. You can define [your own colour](http://colour.oculum.ink/api/532a33) or [generate random](http://colour.oculum.ink/api/random).
+Colour has also own API which gives response in json. You can define [your own colour](http://colour.oculum.ink/api/532a33) `colour.oculum.ink/api/532a33` or [generate random](http://colour.oculum.ink/api/random) `colour.oculum.ink/api/random`.
 
 __Response is an array:__
 ```php
 {
 "my_colour":"532a33",
-"hex":"532a33",
-"rgb":
+"main_hex":"532a33",
+"main_rgb":
     {
     "R":83,
     "G":42,
     "B":51
     },
-"hsl":
+"main_hsl":
     {
     "H":347,
     "S":0.33,
     "L":0.25
     },
-"text":"ffffff",
-"compl_hsl":
-    {
-    "H":167,
-    "S":0.33,
-    "L":0.75
-    },
-"compl_hex":"aad4cb",
-"compl_rgb":
+"main_text":"ffffff",
+"comp_hex":"aad4cb",
+"comp_rgb":
     {
     "R":170,
     "G":212,
     "B":203
     },
+"comp_hsl":
+    {
+    "H":167,
+    "S":0.33,
+    "L":0.75
+    },
+"comp_text":"000000",
 "error_code":"C01"
 }
 ```
@@ -80,17 +81,32 @@ Colour() response is an array with these columns.
 'compl_hex'  => complementary colour converted to HEX
 'compl_rgb'  => complementary colour in RGB
 'error_code' => error code, which is given with every response
+
+'my_colour'  => given variable or app response code
+'main_hex'   => main colour in HEX formate
+'main_rgb'   => the same colour as HEX but RGB
+'main_hsl'   => main colour formated as HSL
+'main_text'  => text colour - white or black, based on brightness
+'comp_hex'   => complementary colour converted to HEX
+'comp_rgb'   => complementary colour in RGB
+'comp_hsl'   => complementary colour in HSL
+'comp_text'  => complementary text colour - white or black, based on brightness
+'error_code' => application response error code
+
 ```
 
-#### Error codes
-Error codes and their translation can be found in `./modules/error_translation.php`.
+#### Response codes
+Response codes and their translation can be found in `./modules/response_translation.php`.
+
+Error code has suffix E - C00E etc.
+
 + C00 - No variable is specified, default: empty
 + C01 - Given variable was HEX or RGB, default: empty
 + C02 - Given variable was word 'random', default: set
 + C03 - Given variable was not supported colour format, default: set
 
 ## Folder structure
-+ `./api` - contains all api functions
++ `./api` - contains api functions
 + `./modules` - application logic
 + `./modules/classes` - colour class
 + `./layout` - views

@@ -9,7 +9,7 @@
         <input type="submit" value=" ">
     </form>
     <?php
-    if(isset($color['error_code']) && $color['error_code'] == 'C03' || isset($color['error_code']) && $color['error_code'] == 'C02')
+    if(isset($color['error_code']) && $color['error_code'] == 'C03E' || isset($color['error_code']) && $color['error_code'] == 'C02E')
     {
         echo '<p class="wrongFormat">'.errorTranslation($color['error_code']).'</p>';
     }
