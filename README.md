@@ -72,16 +72,6 @@ There are more functions for disposal.
 #### Colour() response
 Colour() response is an array with these columns.
 ```php
-'my_colour'  => given variable, can be also null
-'hex'        => original colour in HEX formate
-'rgb'        => the same colour as HEX but RGB
-'hsl'        => main colour formated as HSL
-'text'       => text colour - white or black, based on brightness
-'compl_hsl'  => complementary colour in HSL
-'compl_hex'  => complementary colour converted to HEX
-'compl_rgb'  => complementary colour in RGB
-'error_code' => error code, which is given with every response
-
 'my_colour'  => given variable or app response code
 'main_hex'   => main colour in HEX formate
 'main_rgb'   => the same colour as HEX but RGB
@@ -92,7 +82,6 @@ Colour() response is an array with these columns.
 'comp_hsl'   => complementary colour in HSL
 'comp_text'  => complementary text colour - white or black, based on brightness
 'error_code' => application response error code
-
 ```
 
 #### Response codes
