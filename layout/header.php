@@ -5,7 +5,7 @@
 <html lang="en">
 <!--#endif -->
     <head>
-        <title>Color - <?php echo $color['hex']; ?></title>
+        <title>Color - #<?php echo $color['main_hex']; ?></title>
         <!-- META -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="description" content="Welcome colors into your life. Colorizer has been created to add color into today's black and white world. You can use color finder (accepts HEX - #FF00FF, #CCC and RGB - 255,0,255 formats) or just use the random button." />
@@ -28,20 +28,21 @@
             .authors ul,
             .about,
             footer,
-            .wrongFormat
-            {color: #<?php echo $color['text'] ?>;}
+            .wrongFormat,
+            #switch-colour
+            {color: #<?php echo $color['main_text'] ?>;}
 
             .myColor
-            {border-color: #<?php echo $color['text'] ?>;}
+            {border-color: #<?php echo $color['main_text'] ?>;}
 
             ::selection
-            {background: #<?php echo $color['compl_hex'] ?>; color: #<?php echo $color['hex']; ?>;}
+            {background: #<?php echo $color['comp_hex'] ?>; color: #<?php echo $color['main_hex']; ?>;}
             ::-moz-selection
-            {background: #<?php echo $color['compl_hex'] ?>; color: #<?php echo $color['hex']; ?>;}
+            {background: #<?php echo $color['comp_hex'] ?>; color: #<?php echo $color['main_hex']; ?>;}
         </style>
     </head>
     <!-- HEAD END -->
-    <body style="background: #<?php echo $color['hex']; ?>">
+    <body style="background: #<?php echo $color['main_hex']; ?>">
         <header>
             <h1><a href="<?php echo $base_url ?>">Colour</a></h1>
             <a href="https://oculum.ink" class="subtitle">oculum.ink</a>

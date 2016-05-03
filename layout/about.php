@@ -10,7 +10,7 @@
         Did you find your favourite color or color that expresses your feelings? You sure did. Let your friends know about that color thanks to social networks. Do you want to save your color for later? save the page with the color to you bookmarks in your web browser.
     </p>
     <p>
-        Maybe is good to know that current colour is #<?php echo $color['hex']; ?>.
+        Maybe is good to know that current colour is #<?php echo $color['main_hex']; ?>.
     </p>
 </section>
 <?php include 'layout/footer.php'; ?>

@@ -110,6 +110,22 @@ header {
     font-size: 4.5em; }
     .fonts-loaded .myColorAndRandomColor .myColor {
       font-family: "proxima-nova-soft", sans-serif; }
+  .myColorAndRandomColor #switch-colour {
+    font-family: sans-serif;
+    font-weight: 400;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    margin: 0.5em 0 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold; }
+    .fonts-loaded .myColorAndRandomColor #switch-colour {
+      font-family: "proxima-nova-soft", sans-serif; }
+    .myColorAndRandomColor #switch-colour:hover {
+      opacity: 0.3; }
   .myColorAndRandomColor #randomColor {
     width: 1.5em;
     height: 1.5em;
@@ -170,6 +186,19 @@ header {
       margin: 0 0 0.75em 0; }
       .authors ul li:last-child {
         margin-top: 2.5em; }
+
+.complementaryColour {
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -ms-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+  z-index: -1; }
 
 .about {
   position: absolute;

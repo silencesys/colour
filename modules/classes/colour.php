@@ -65,7 +65,7 @@ class Colour {
      * @return array HSL colours as array
      *
      */
-    public static function hexToHsl( $colour )
+    public static function hexToHsl($colour)
     {
         // Convert HEX to DEC
         if(strlen($colour) == 3) {
@@ -115,7 +115,7 @@ class Colour {
      * @return array      Converted HSL colours to RGB
      *
      */
-    public static function hslToRgb( $hsl ){
+    public static function hslToRgb($hsl){
 
         $h = $hsl['H'];
         $s = $hsl['S'];
@@ -229,13 +229,27 @@ class Colour {
     public static function colour($myColour = null)
     {
         $rgb_rule = false;
-        // clean $myColour out of colour prefixes
+        $hsl_rule = false;
+        $hex_rule = false;
+
+        // Define defaults
+        $random        = self::randomColour();
+        $my_colour     = 'C00';
+        $main_hex      = $random['hex'];
+        $main_rgb      = $random['rgb'];
+        $main_hsl      = $random['hsl'];
+        $main_text     = self::contrast($main_hex);
+        $comp_hsl      = self::complementary($main_hsl);
+        $comp_rgb      = self::hslToRgb($comp_hsl);
+        $comp_hex      = self::rgbToHex($comp_rgb);
+        $error_code    = 'C00'; // NOTHING SPECIFIED
+
         if(isset($myColour))
         {
             $myColour = str_replace(['#', '(', ')'], '', $myColour);
 
             // validate and replace unwanted characters
-            if(strpos($myColour, 'rgb') !== false || strpos($myColour, 'rgb') == false && strpos($myColour, ',') !== false)
+            if(strpos($myColour, 'rgb') !== false && strlen($myColour) >= 6)
             {
                 $myColour = str_replace(['rgb'], '', $myColour);
                 if(strpos($myColour, ',') !== false)
@@ -259,75 +273,93 @@ class Colour {
                 ];
                 $rgb_rule = true;
             }
+            elseif(strpos($myColour, 'hsl') !== false && strlen($myColour) >= 6)
+            {
+                $myColour = str_replace(['hsl'], '', $myColour);
+                if(strpos($myColour, ',') !== false)
+                {
+                    $myColour = explode(',', $myColour);
+                }
+                elseif(strpos($myColour, '.') !== false)
+                {
+                    $myColour = explode('.', $myColour);
+                }
+                else
+                {
+                    $length  = strlen($myColour);
+                    $split = $length / 3;
+                    $myColour = str_split($myColour, $split);
+                }
+                $myColour = [
+                    'H' => $myColour['0'],
+                    'S' => $myColour['1'] / 100,
+                    'L' => $myColour['2'] / 100,
+                ];
+                $hsl_rule = true;
+            }
             else
             {
                 $hex_rule = preg_match('/^[a-fA-F\d+]+$/', $myColour);
             }
-
             if($rgb_rule)
             {
-                $hex           = self::rgbToHex($myColour);
-                $rgb           = $myColour;
-                $hsl           = self::hexToHsl($hex);
-                $text          = self::contrastColour($hex);
-                $raw_compl     = self::complementary($hsl);
-                $complementary = self::hslToRgb($raw_compl);
+                $my_colour     = $myColour;
+                $main_hex      = self::rgbToHex($myColour);
+                $main_rgb      = $myColour;
+                $main_hsl      = self::hexToHsl($main_hex);
+                $main_text     = self::contrast($main_hex);
+                $comp_hsl      = self::complementary($main_hsl);
+                $comp_rgb      = self::hslToRgb($comp_hsl);
+                $comp_hex      = self::rgbToHex($comp_rgb);
                 $error_code    = 'C01'; // NONE
             }
             elseif($hex_rule)
             {
-                $hex           = $myColour;
-                $rgb           = self::hexToRgb($myColour);
-                $hsl           = self::hexToHsl($myColour);
-                $text          = self::contrastColour($myColour);
-                $raw_compl     = self::complementary($hsl);
-                $complementary = self::hslToRgb($raw_compl);
+                $my_colour     = $myColour;
+                $main_hex      = $myColour;
+                $main_rgb      = self::hexToRgb($myColour);
+                $main_hsl      = self::hexToHsl($myColour);
+                $main_text     = self::contrast($myColour);
+                $comp_hsl      = self::complementary($main_hsl);
+                $comp_rgb      = self::hslToRgb($comp_hsl);
+                $comp_hex      = self::rgbToHex($comp_rgb);
                 $error_code    = 'C01'; // NONE
+            }
+            elseif($hsl_rule)
+            {
+                $my_colour     = $myColour;
+                $main_hsl      = $myColour;
+                $main_rgb      = self::hslToRgb($main_hsl);
+                $main_hex      = self::rgbToHex($main_rgb);
+                $main_text     = self::contrast($main_hex);
+                $comp_hsl      = self::complementary($myColour);
+                $comp_rgb      = self::hslToRgb($comp_hsl);
+                $comp_hex      = self::rgbToHex($comp_rgb);
+                $error_code    = 'C01'; // NONE
+
             }
             elseif($myColour == 'random' || $myColour == 'Random')
             {
-                $random        = self::randomColour();
-                $hex           = $random['hex'];
-                $rgb           = $random['rgb'];
-                $hsl           = $random['hsl'];
-                $text          = self::contrastColour($hex);
-                $raw_compl     = self::complementary($hsl);
-                $complementary = self::hslToRgb($raw_compl);
+                $my_colour     = 'C02'; // Random colour
                 $error_code    = 'C02'; // RANDOM
             }
             else
             {
-                $random        = self::randomColour();
-                $hex           = $random['hex'];
-                $rgb           = $random['rgb'];
-                $hsl           = $random['hsl'];
-                $text          = self::contrastColour($hex);
-                $raw_compl     = self::complementary($hsl);
-                $complementary = self::hslToRgb($raw_compl);
+                $my_colour     = 'C03'; // Wrong format
                 $error_code    = 'C03'; // WRONG FORMAT
             }
         }
-        else
-        {
-            $random        = self::randomColour();
-            $hex           = $random['hex'];
-            $rgb           = $random['rgb'];
-            $hsl           = $random['hsl'];
-            $text          = self::contrastColour($hex);
-            $raw_compl     = self::complementary($hsl);
-            $complementary = self::hslToRgb($raw_compl);
-            $error_code    = 'C00'; // NOTHING SPECIFIED
-        }
         // return!
         return $colour = [
-            'my_colour'  => $myColour,
-            'hex'        => $hex,
-            'rgb'        => $rgb,
-            'hsl'        => $hsl,
-            'text'       => $text,
-            'compl_hsl'  => $raw_compl,
-            'compl_hex'  => self::rgbToHex($complementary),
-            'compl_rgb'  => $complementary,
+            'my_colour'  => $my_colour,
+            'main_hex'   => $main_hex,
+            'main_rgb'   => $main_rgb,
+            'main_hsl'   => $main_hsl,
+            'main_text'  => $main_text,
+            'comp_hex'   => $comp_hex,
+            'comp_rgb'   => $comp_rgb,
+            'comp_hsl'   => $comp_hsl,
+            'comp_text'  => self::contrast($comp_hex),
             'error_code' => $error_code
         ];
     }
@@ -345,7 +377,7 @@ class Colour {
      * @return string HEX colour without prefix
      *
      */
-    private static function contrastColour($hex)
+    private static function contrast($hex)
     {
         if($hex <= 3)
         {

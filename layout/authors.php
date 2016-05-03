@@ -15,7 +15,7 @@
             <h3>Red Panda</h3>
             <p>Because why not! Red pandas are soo cool.</p>
         </li>
-        <li>Contact us at colour[at]oculum.ink. <br> PS. Current colour is #<?php echo $color['hex']; ?>.</li>
+        <li>Contact us at colour[at]oculum.ink. <br> PS. Current colour is #<?php echo $color['main_hex']; ?>.</li>
     </ul>
 </section>
 <?php include 'layout/footer.php'; ?>
