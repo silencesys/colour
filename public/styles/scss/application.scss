@@ -57,6 +57,7 @@ body
     font-size: 100%;
     position: relative;
     background: $basicGrey;
+    @include transition(background-color .6s);
     @media #{$smallscreen}
     {
         font-size: 85%;
@@ -260,16 +261,16 @@ header
         }
     }
 }
-.complementaryColour
-{
-    display: block;
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    right: 0;
-    @include transition(background .5s);
-    z-index: -1;
-}
+// .complementaryColour
+// {
+//     display: block;
+//     position: absolute;
+//     width: 50%;
+//     height: 100%;
+//     right: 0;
+//     @include transition(background .5s);
+//     z-index: -1;
+// }
 .about
 {
     position: absolute;

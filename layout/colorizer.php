@@ -15,5 +15,4 @@
     }
     ?>
 </section>
-<section class="complementaryColour"></section>
 <?php include 'layout/footer.php'; ?>

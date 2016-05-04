@@ -28,13 +28,13 @@ jQuery(document).ready(function($) {
             {
                 el.val(comp_colour);
                 $(this).text(txt_main);
-                $('.complementaryColour').css('background', comp_colour);
+                $('body').css('background-color', comp_colour);
             }
             else
             {
                 el.val(main_colour);
                 $(this).text(txt_comp);
-                $('.complementaryColour').css('background', 'none');
+                $('body').css('background-color', main_colour);
             }
         }
     );
